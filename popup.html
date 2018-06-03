@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>TRY Exchange Rates</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <style>
+    /* Modal Structure */
+    html,
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+      width: 384px;
+    }
+    h1 {
+      font-family: 'Menlo', monospace;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0;
+      color: #2f5876;
+    }
+    a:link,
+    a:visited {
+      color: #000000;
+      outline: 0;
+      text-decoration: none;
+    }
+    img {
+      width: 30px;
+    }
+    .modal-header {
+      align-items: center;
+      border-bottom: 0.5px solid #dadada;
+    }
+    .modal-content {
+      padding: 0 22px;
+    }
+    .modal-icons {
+      border-top: 0.5px solid #dadada;
+      height: 50px;
+      width: 100%;
+    }
+    .logo {
+      padding: 22px;
+    }
+    .logo-icon {
+      vertical-align: text-bottom;
+      margin-right: 12px;
+    }
+    .version {
+      color: #444;
+      font-size: 18px;
+    }
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 22px;
+    }
+    .flex {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      width: 120px;
+    }
+    .flex:hover {
+      opacity: 0.4;
+    }
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+  </style>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <div class="modal-header">
+    <h1 class="logo">
+      TRY Exchange
+      <span class="version">(1.0.0)</span>
+      <a href="https://www.linkedin.com/in/burakoz1/" class="fa fa-linkedin"></a>
+    </h1>
+  </div>
+  <div class="modal-content">
+    <p>Exchange rates of Turkish Lira</p>
+  </div>
+  <div class="modal-icons">
+    <div class="flex-container">
+      <div class="flex">
+        <a href="https://www.xe.com/currency/try-turkish-lira">
+            <img src = "images/dollar.png" title="US Dollar to Turkish Lira">
+            <p id = "dollar-rate"></p>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="https://www.xe.com/currency/try-turkish-lira">
+            <img src = "images/euro.png" title="Euro to Turkish Lira">
+            <p id = "euro-rate"></p>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="https://www.xe.com/currency/try-turkish-lira">
+            <img src = "images/pound.png" title="GB Pound to Turkish Lira">
+            <p id = "pound-rate"></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
