@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Kur Kaç?",
-    "description": "Döviz kurlarını görüntülemek için Chrome uzantısı. / Chrome extension to display exchange rates of Turkish Lira.",
+    "description": "Döviz kurlarını görüntülemek için geliştirilmiş Chrome uzantısı. / Chrome extension developed for displaying exchange rates of Turkish Lira.",
     "version": "1.0",
     "icons": {
         "128": "icon_128.png"
