@@ -9,7 +9,7 @@
     @import "https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300";
 
     body {
-      height: 330px;
+      height: 350px;
       font-family: Maitree, serif;
       margin: 0 auto;
       color: #333;
@@ -40,7 +40,7 @@
     }
 
     td {
-      font-size: 23px;
+      font-size: 28px;
     }
 
     img {
@@ -107,29 +107,53 @@
     </tr>
     <tr>
       <td class="hist">
-        <span id="cur-usd-rate" style = "font-size:27px"></span>
+        <span id="cur-usd-rate" style = "font-size:30px"></span>
+      </td>
+      <td class="hist">
+        <span id="cur-eur-rate" style = "font-size:30px"></span>
+      </td>
+      <td class="hist">
+        <span id="cur-gbp-rate" style = "font-size:30px"></span>
+      </td>
+    </tr>
+    <tr>
+      <td class="hist">
         <span id="hist-usd-change"></span>
         <span id="hist-usd-diff"></span>
+      </td>
+      <td class="hist">
+        <span id="hist-eur-change"></span>
+        <span id="hist-eur-diff"></span>
+      </td>
+      <td class="hist">
+        <span id="hist-gbp-change"></span>
+        <span id="hist-gbp-diff"></span>
+      </td>
+    </tr>
+    <tr>
+      <td class="hist">
         <span class="yesterday"></span>
         <span id="hist-usd-rate"></span>
+      </td>
+      <td class="hist">
+        <span class="yesterday"></span>
+        <span id="hist-eur-rate"></span>
+      </td>
+      <td class="hist">
+        <span class="yesterday"></span>
+        <span id="hist-gbp-rate"></span>
+      </td>
+    </tr>
+    <tr>
+      <td class="hist">
         <i class="fas fa-angle-double-down down" id="ar-down-usd"></i>
         <i class="fas fa-angle-double-up up" id="ar-up-usd"></i>
       </td>
       <td class="hist">
-        <span id="cur-eur-rate" style = "font-size:27px"></span>
-        <span id="hist-eur-change"></span>
-        <span id="hist-eur-diff"></span>
-        <span class="yesterday"></span>
-        <span id="hist-eur-rate"></span>
         <i class="fas fa-angle-double-down down" id="ar-down-eur"></i>
         <i class="fas fa-angle-double-up up" id="ar-up-eur"></i>
       </td>
       <td class="hist">
-        <span id="cur-gbp-rate" style = "font-size:27px"></span>
-        <span id="hist-gbp-change"></span>
-        <span id="hist-gbp-diff"></span>
-        <span class="yesterday"></span>
-        <span id="hist-gbp-rate"></span>
         <i class="fas fa-angle-double-down down" id="ar-down-gbp"></i>
         <i class="fas fa-angle-double-up up" id="ar-up-gbp"></i>
       </td>
