@@ -5,6 +5,7 @@
   <title>Kur Kaç?</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     @import "https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300";
 
@@ -73,6 +74,13 @@
       font-size: 10px;
     }
 
+    #load {
+      display: table;
+      width: 450px;
+      height: 370px;
+      text-align: center;
+    }
+
     @keyframes bounce {
       0% {
         margin-top: 0px;
@@ -95,21 +103,30 @@
 </head>
 
 <body>
-  <table width="450">
+  <div id="load">
+    <i class="fa fa-spinner fa-spin" style="font-size:48px; display: table-cell; vertical-align: middle; color: #133875"></i>
+  </div>
+  <table id="rateTable" width="450">
     <tr>
-      <th class = "rate" title="USD/TL"><img src="images/dollar.png" title="US Dollar to Turkish Lira"></th>
-      <th class = "rate" title="EUR/TL"><img src="images/euro.png" title="Euro to Turkish Lira"></th>
-      <th class = "rate" title="GBP/TL"><img src="images/pound.png" title="GB Pound to Turkish Lira"></th>
+      <th class="rate" title="USD/TL">
+        <img src="images/dollar.png" title="US Dollar to Turkish Lira">
+      </th>
+      <th class="rate" title="EUR/TL">
+        <img src="images/euro.png" title="Euro to Turkish Lira">
+      </th>
+      <th class="rate" title="GBP/TL">
+        <img src="images/pound.png" title="GB Pound to Turkish Lira">
+      </th>
     </tr>
     <tr>
       <td class="hist">
-        <span id="cur-usd-rate" style = "font-size:30px"></span>
+        <span id="cur-usd-rate" style="font-size:30px"></span>
       </td>
       <td class="hist">
-        <span id="cur-eur-rate" style = "font-size:30px"></span>
+        <span id="cur-eur-rate" style="font-size:30px"></span>
       </td>
       <td class="hist">
-        <span id="cur-gbp-rate" style = "font-size:30px"></span>
+        <span id="cur-gbp-rate" style="font-size:30px"></span>
       </td>
     </tr>
     <tr>
