@@ -10,7 +10,6 @@
     @import "https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300";
 
     body {
-      height: 370px;
       font-family: Maitree, serif;
       margin: 0 auto;
       color: #333;
@@ -18,9 +17,6 @@
 
     th {
       font-family: "Open Sans", sans-serif;
-      font-size: 30px;
-
-      letter-spacing: 0.1rem;
       padding: .5rem 0;
       text-align: center;
       text-transform: uppercase;
@@ -33,7 +29,9 @@
     }
 
     table {
-      border-spacing: 4px;
+      width: 450px;
+      height: 185px;
+      border-spacing: 9px;
     }
 
     tr {
@@ -44,23 +42,8 @@
       width: 80px;
     }
 
-    .fas {
-      font-size: 65px;
-      -webkit-animation: bounce 1.5s infinite;
-      animation: bounce 1.5s infinite;
-      animation-direction: alternate;
-    }
-
-    .up {
-      color: #A5CC6B
-    }
-
-    .down {
-      color: #A44A3F
-    }
-
-    .hist {
-      font-size: 21px;
+    .cur {
+      font-size: 33px;
     }
 
     .rate {
@@ -68,45 +51,21 @@
       border-bottom: 1px solid #235789;
     }
 
-    .yesterday {
-      color: lightslategray;
-      font-style: italic;
-      font-size: 10px;
-    }
-
-    #load {
+    #loader {
       display: table;
       width: 450px;
-      height: 370px;
+      height: 185px;
       text-align: center;
-    }
-
-    @keyframes bounce {
-      0% {
-        margin-top: 0px;
-      }
-      100% {
-        margin-top: 8px;
-      }
-    }
-
-    @-webkit-keyframes bounce {
-      0% {
-        margin-top: 0px;
-      }
-      100% {
-        margin-top: 8px;
-      }
     }
   </style>
   <script src="popup.js"></script>
 </head>
 
 <body>
-  <div id="load">
+  <div id="loader">
     <i class="fa fa-spinner fa-spin" style="font-size:48px; display: table-cell; vertical-align: middle; color: #133875"></i>
   </div>
-  <table id="rateTable" width="450">
+  <table id="rateTable">
     <tr>
       <th class="rate" title="USD/TL">
         <img src="images/dollar.png" title="US Dollar to Turkish Lira">
@@ -119,59 +78,14 @@
       </th>
     </tr>
     <tr>
-      <td class="hist">
-        <span id="cur-usd-rate" style="font-size:30px"></span>
+      <td class="cur">
+        <span id="cur-usd-rate"></span>
       </td>
-      <td class="hist">
-        <span id="cur-eur-rate" style="font-size:30px"></span>
+      <td class="cur">
+        <span id="cur-eur-rate"></span>
       </td>
-      <td class="hist">
-        <span id="cur-gbp-rate" style="font-size:30px"></span>
-      </td>
-    </tr>
-    <tr>
-      <td class="hist">
-        <span id="hist-usd-change"></span>
-        <br>
-        <span id="hist-usd-diff"></span>
-      </td>
-      <td class="hist">
-        <span id="hist-eur-change"></span>
-        <br>
-        <span id="hist-eur-diff"></span>
-      </td>
-      <td class="hist">
-        <span id="hist-gbp-change"></span>
-        <br>
-        <span id="hist-gbp-diff"></span>
-      </td>
-    </tr>
-    <tr>
-      <td class="hist">
-        <span class="yesterday"></span>
-        <span id="hist-usd-rate"></span>
-      </td>
-      <td class="hist">
-        <span class="yesterday"></span>
-        <span id="hist-eur-rate"></span>
-      </td>
-      <td class="hist">
-        <span class="yesterday"></span>
-        <span id="hist-gbp-rate"></span>
-      </td>
-    </tr>
-    <tr>
-      <td class="hist">
-        <i class="fas fa-angle-double-down down" id="ar-down-usd"></i>
-        <i class="fas fa-angle-double-up up" id="ar-up-usd"></i>
-      </td>
-      <td class="hist">
-        <i class="fas fa-angle-double-down down" id="ar-down-eur"></i>
-        <i class="fas fa-angle-double-up up" id="ar-up-eur"></i>
-      </td>
-      <td class="hist">
-        <i class="fas fa-angle-double-down down" id="ar-down-gbp"></i>
-        <i class="fas fa-angle-double-up up" id="ar-up-gbp"></i>
+      <td class="cur">
+        <span id="cur-gbp-rate"></span>
       </td>
     </tr>
   </table>
