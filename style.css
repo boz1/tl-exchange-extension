@@ -1,0 +1,78 @@
+@import "https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300";
+
+body {
+  font-family: Maitree, serif;
+  margin: 0 auto;
+  font-size: 28px;
+  color: #333
+}
+
+th {
+  font-family: "Open Sans", sans-serif;
+  padding: .5rem 0;
+}
+
+a {
+  color: #2b4255;
+}
+
+table {
+  width: 515px;
+  text-align: center;
+  vertical-align: middle;
+  border-spacing: 4px;
+}
+
+tr {
+  text-align: center;
+}
+
+img {
+  width: 80px;
+}
+
+.icon {
+  border-top: 1px solid #f0ba48;
+  border-bottom: 1px solid #2b4255;
+}
+
+#loader {
+  display: table;
+  width: 515px;
+  height: 231px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.fas {
+  opacity: 0.7;
+}
+
+.fas:hover {
+  opacity: 1
+}
+
+#arrow {
+  text-align: center;
+}
+
+#cur {
+  font-size: 35px;
+}
+
+.up {
+  color: #A5CC0D
+}
+
+.down {
+  color: #A44A3F
+}
+
+.yesterday {
+  font-size: 9px;
+  color: darkgrey;
+}
+
+.hist {
+  color: lightslategrey;
+}

@@ -6,87 +6,87 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    @import "https://fonts.googleapis.com/css?family=Maitree|Oswald:700|Open+Sans:300";
-
-    body {
-      font-family: Maitree, serif;
-      margin: 0 auto;
-      color: #333;
-    }
-
-    th {
-      font-family: "Open Sans", sans-serif;
-      padding: .5rem 0;
-      text-align: center;
-      text-transform: uppercase;
-      vertical-align: middle;
-      width: 100px;
-    }
-
-    a {
-      color: #133875;
-    }
-
-    table {
-      width: 450px;
-      height: 185px;
-      border-spacing: 9px;
-    }
-
-    tr {
-      text-align: center;
-    }
-
-    img {
-      width: 80px;
-    }
-
-    .cur {
-      font-size: 33px;
-    }
-
-    .rate {
-      border-top: 1px solid #235789;
-      border-bottom: 1px solid #235789;
-    }
-
-    #loader {
-      display: table;
-      width: 450px;
-      height: 185px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="popup.js"></script>
 </head>
 
 <body>
   <div id="loader">
-    <i class="fa fa-spinner fa-spin" style="font-size:48px; display: table-cell; vertical-align: middle; color: #133875"></i>
+    <span style="display: table-cell; vertical-align: middle">
+      <i class="fa fa-spinner fa-spin" style="font-size:55px; color: #2b4255"></i>
+      <br>
+      <br> G&#252ncel kur de&#287erleri y&#252kleniyor...
+    </span>
   </div>
   <table id="rateTable">
-    <tr>
-      <th class="rate" title="USD/TL">
-        <img src="images/dollar.png" title="US Dollar to Turkish Lira">
+    <tr id="header">
+      <th class="icon">
+        <img src="images/dollar.png" title="USD/TRY">
       </th>
-      <th class="rate" title="EUR/TL">
-        <img src="images/euro.png" title="Euro to Turkish Lira">
+      <th class="icon">
+        <img src="images/euro.png" title="EUR/TRY">
       </th>
-      <th class="rate" title="GBP/TL">
-        <img src="images/pound.png" title="GB Pound to Turkish Lira">
+      <th class="icon">
+        <img src="images/pound.png" title="GBP/TRY">
       </th>
     </tr>
-    <tr>
-      <td class="cur">
+    <tr id="cur">
+      <td>
         <span id="cur-usd-rate"></span>
       </td>
-      <td class="cur">
+      <td>
         <span id="cur-eur-rate"></span>
       </td>
-      <td class="cur">
+      <td>
         <span id="cur-gbp-rate"></span>
       </td>
+    </tr>
+    <tr class="extra">
+      <td>
+        <span id="diff-usd-rate"></span>
+      </td>
+      <td>
+        <span id="diff-eur-rate"></span>
+      </td>
+      <td>
+        <span id="diff-gbp-rate"></span>
+      </td>
+    </tr>
+    <tr class="extra">
+      <td>
+        <span id="per-usd-rate"></span>
+      </td>
+      <td>
+        <span id="per-eur-rate"></span>
+      </td>
+      <td>
+        <span id="per-gbp-rate"></span>
+      </td>
+    </tr>
+    <tr class="extra hist">
+      <td>
+        <span id="hist-usd-rate"></span>
+      </td>
+      <td>
+        <span id="hist-eur-rate"></span>
+      </td>
+      <td>
+        <span id="hist-gbp-rate"></span>
+      </td>
+    </tr>
+    <tr class="arrow">
+      <td></td>
+      <td>
+        <i id="down" class="fas fa-angle-down" style="color: #2b4255; font-size:26px;"></i>
+      </td>
+      <td></td>
+    </tr>
+    <tr class="arrow">
+      <td></td>
+      <td>
+        <i id="up" class="fas fa-angle-up" style="color: #2b4255; font-size:26px;"></i>
+      </td>
+      <td></td>
     </tr>
   </table>
 </body>
