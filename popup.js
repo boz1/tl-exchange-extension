@@ -6,59 +6,59 @@ window.addEventListener('load', function load(event) {
     document.getElementsByClassName("arrow")[0].style.display = "none"
     document.getElementsByClassName("arrow")[1].style.display = "none"
 
-    document.getElementById("down").addEventListener('click', function () {
-        document.getElementsByClassName("extra")[0].style.display = ""
-        document.getElementsByClassName("extra")[1].style.display = ""
-        document.getElementsByClassName("extra")[2].style.display = ""
-        document.getElementsByClassName("arrow")[0].style.display = "none"
-        document.getElementsByClassName("arrow")[1].style.display = ""
-    })
+    // document.getElementById("down").addEventListener('click', function () {
+    //     document.getElementsByClassName("extra")[0].style.display = ""
+    //     document.getElementsByClassName("extra")[1].style.display = ""
+    //     document.getElementsByClassName("extra")[2].style.display = ""
+    //     document.getElementsByClassName("arrow")[0].style.display = "none"
+    //     document.getElementsByClassName("arrow")[1].style.display = ""
+    // })
 
-    document.getElementById("up").addEventListener('click', function () {
-        document.getElementsByClassName("extra")[0].style.display = "none"
-        document.getElementsByClassName("extra")[1].style.display = "none"
-        document.getElementsByClassName("extra")[2].style.display = "none"
-        document.getElementsByClassName("arrow")[0].style.display = ""
-        document.getElementsByClassName("arrow")[1].style.display = "none"
-    })
+    // document.getElementById("up").addEventListener('click', function () {
+    //     document.getElementsByClassName("extra")[0].style.display = "none"
+    //     document.getElementsByClassName("extra")[1].style.display = "none"
+    //     document.getElementsByClassName("extra")[2].style.display = "none"
+    //     document.getElementsByClassName("arrow")[0].style.display = ""
+    //     document.getElementsByClassName("arrow")[1].style.display = "none"
+    // })
 
-    let urlUSD = 'https://cors-anywhere.herokuapp.com/' + 'https://www.investing.com/currencies/usd-try';
+    let urlUSD = 'https://api.exchangeratesapi.io/latest?base=USD&symbols=TRY';
     let responseUSD = ""
 
     let xhr1 = new XMLHttpRequest();
     xhr1.open("GET", urlUSD)
     xhr1.onload = function () {
-        responseUSD = xhr1.responseText;
+        responseUSD = JSON.parse(xhr1.response);
         setCurrentRate(responseUSD, "cur-usd-rate")
-        setDiffRate(responseUSD, "diff-usd-rate")
-        setPerRate(responseUSD, "per-usd-rate")
-        setHistRate(responseUSD, "hist-usd-rate")
+        // setDiffRate(responseUSD, "diff-usd-rate")
+        // setPerRate(responseUSD, "per-usd-rate")
+        // setHistRate(responseUSD, "hist-usd-rate")
 
-        let urlEUR = 'https://cors-anywhere.herokuapp.com/' + 'https://www.investing.com/currencies/eur-try';
+        let urlEUR = 'https://api.exchangeratesapi.io/latest?base=EUR&symbols=TRY';
         let responseEUR = ""
 
         let xhr2 = new XMLHttpRequest();
         xhr2.open("GET", urlEUR)
         xhr2.onload = function () {
-            responseEUR = xhr2.responseText;
+            responseEUR = JSON.parse(xhr2.response);
             setCurrentRate(responseEUR, "cur-eur-rate")
-            setDiffRate(responseEUR, "diff-eur-rate")
-            setPerRate(responseEUR, "per-eur-rate")
-            setHistRate(responseEUR, "hist-eur-rate")
+            // setDiffRate(responseEUR, "diff-eur-rate")
+            // setPerRate(responseEUR, "per-eur-rate")
+            // setHistRate(responseEUR, "hist-eur-rate")
 
-            let urlGBP = 'https://cors-anywhere.herokuapp.com/' + 'https://www.investing.com/currencies/gbp-try';
+            let urlGBP = 'https://api.exchangeratesapi.io/latest?base=GBP&symbols=TRY';
             let responseGBP = ""
 
             let xhr3 = new XMLHttpRequest();
             xhr3.open("GET", urlGBP)
             xhr3.onload = function () {
-                responseGBP = xhr3.responseText;
+                responseGBP = JSON.parse(xhr3.response);
                 setCurrentRate(responseGBP, "cur-gbp-rate")
-                setDiffRate(responseGBP, "diff-gbp-rate")
-                setPerRate(responseGBP, "per-gbp-rate")
-                setHistRate(responseGBP, "hist-gbp-rate")
+                // setDiffRate(responseGBP, "diff-gbp-rate")
+                // setPerRate(responseGBP, "per-gbp-rate")
+                // setHistRate(responseGBP, "hist-gbp-rate")
 
-                document.getElementById("down").setAttribute("title","\u00d6nceki g\u00fcn ile kar\u015f\u0131la\u015ft\u0131r")
+                // document.getElementById("down").setAttribute("title","\u00d6nceki g\u00fcn ile kar\u015f\u0131la\u015ft\u0131r")
                 document.getElementsByClassName("hist")[0].setAttribute("title", "\u00d6nceki kapan\u0131\u015f")
                 document.getElementsByClassName("arrow")[0].style.display = ""
                 document.getElementById("loader").style.display = "none"
@@ -74,7 +74,7 @@ window.addEventListener('load', function load(event) {
 })
 
 function setCurrentRate(response, eid) {
-    let rate = response.split('id="last_last" dir="ltr">')[1].split("</")[0]
+    let rate = response.rates.TRY.toFixed(4);
     document.getElementById(eid).appendChild(document.createTextNode(rate))
 }
 
